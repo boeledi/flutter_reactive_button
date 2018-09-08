@@ -2,7 +2,7 @@
 
 A Widget that mimics the Facebook Reaction Button in Flutter.
 
-<img src="https://www.didierboelens.com/images/reactive_button.gif" width="220" alt="Flutter ReacticeButton" />
+<img src="https://github.com/boeledi/flutter_reactive_button/reactive_button.gif" width="220" alt="Flutter ReactiveButton" />
 <br/><br/>
 
 ---
