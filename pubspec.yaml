@@ -1,6 +1,6 @@
 name: flutter_reactive_button
-description: a Widget to mimic the Facebook Reaction button in Flutter
-version: 0.1.0
+description: a Widget to mimic the Facebook Reaction button in Flutter and allows re-use in different other use cases than Facebook.
+version: 1.0.0
 author: Didier Boelens <mail@didierboelens.com>
 homepage: https://github.com/boeledi/flutter_reactive_button
 

@@ -41,14 +41,14 @@ final BoxDecoration _kDefaultDecoration = BoxDecoration(
 );
 
 /// A Widget that mimics the Facebook Reaction Button in Flutter.
-/// 
+///
 /// A ReactiveButton expects a minimum of 4 parameters [icons], [onSelected], [onTap], [child].
 ///
 /// The [icons] contains the list of all the icon assets which will be displayed, together with a code associate to them.
 /// The [onSelected] is called when the user releases the pointer over an icon.
 /// The [onTap] is called when the user has simply tapped the [ReactiveButton]
 /// The [child] defines the button itself as a Widget
-/// 
+///
 class ReactiveButton extends StatefulWidget {
   ReactiveButton({
     Key key,

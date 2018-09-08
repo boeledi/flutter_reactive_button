@@ -3,7 +3,6 @@ import 'package:flutter_reactive_button/src/reactive_button_bloc.dart';
 import 'package:flutter_reactive_button/src/reactive_icon.dart';
 import 'package:flutter_reactive_button/src/reactive_icon_definition.dart';
 
-
 class ReactiveIconContainer extends StatefulWidget {
   ReactiveIconContainer({
     Key key,

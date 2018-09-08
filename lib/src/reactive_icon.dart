@@ -14,7 +14,7 @@ class ReactiveIcon extends StatefulWidget {
     this.bloc,
     this.growRatio,
     this.roundIcon,
-  }): super(key: key);
+  }) : super(key: key);
 
   /// Width of each individual icons
   final double iconWidth;
@@ -35,7 +35,8 @@ class ReactiveIcon extends StatefulWidget {
   _ReactiveIconState createState() => _ReactiveIconState();
 }
 
-class _ReactiveIconState extends State<ReactiveIcon> with SingleTickerProviderStateMixin {
+class _ReactiveIconState extends State<ReactiveIcon>
+    with SingleTickerProviderStateMixin {
   StreamSubscription _streamSubscription;
   AnimationController _animationController;
 
@@ -43,34 +44,32 @@ class _ReactiveIconState extends State<ReactiveIcon> with SingleTickerProviderSt
   bool _isHovered = false;
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
 
     // Reset
     _isHovered = false;
-    
+
     // Initialize the animation to highlight the hovered icon
     _animationController = AnimationController(
       value: 0.0,
       duration: const Duration(milliseconds: 200),
       vsync: this,
-    )..addListener((){
-        setState((){});
-      }
-    );
+    )..addListener(() {
+        setState(() {});
+      });
 
     // Start listening to pointer position changes
-    _streamSubscription = widget.bloc
-                                .outPointerPosition
-                                // take some time before jumping into the request (there might be several ones in a row)
-                                .bufferTime(Duration(milliseconds: 100))
-                                // and, do not update where this is no need
-                                .where((batch) => batch.isNotEmpty)
-                                .listen(_onPointerPositionChanged);
+    _streamSubscription = widget.bloc.outPointerPosition
+        // take some time before jumping into the request (there might be several ones in a row)
+        .bufferTime(Duration(milliseconds: 100))
+        // and, do not update where this is no need
+        .where((batch) => batch.isNotEmpty)
+        .listen(_onPointerPositionChanged);
   }
 
   @override
-  void dispose(){
+  void dispose() {
     _animationController?.dispose();
     _streamSubscription?.cancel();
     super.dispose();
@@ -79,11 +78,11 @@ class _ReactiveIconState extends State<ReactiveIcon> with SingleTickerProviderSt
   @override
   Widget build(BuildContext context) {
     Widget icon = Image.asset(
-        widget.icon.assetIcon,
-        width: widget.iconWidth,
-        height: widget.iconWidth,
-      );
-    if (widget.roundIcon){
+      widget.icon.assetIcon,
+      width: widget.iconWidth,
+      height: widget.iconWidth,
+    );
+    if (widget.roundIcon) {
       icon = CircleAvatar(
         radius: widget.iconWidth / 2,
         child: icon,
@@ -106,17 +105,17 @@ class _ReactiveIconState extends State<ReactiveIcon> with SingleTickerProviderSt
   // Also, we need to notify whomever interested in knowning
   // which icon is highlighted or lost its highlight
   //
-  void _onPointerPositionChanged(List<Offset> position){
+  void _onPointerPositionChanged(List<Offset> position) {
     WidgetPosition widgetPosition = WidgetPosition.fromContext(context);
     bool isHit = widgetPosition.rect.contains(position.last);
-    if (isHit){
-      if (!_isHovered){
+    if (isHit) {
+      if (!_isHovered) {
         _isHovered = true;
         _animationController.forward();
         _sendNotification();
       }
     } else {
-      if (_isHovered){
+      if (_isHovered) {
         _isHovered = false;
         _animationController.reverse();
         _sendNotification();
@@ -128,12 +127,10 @@ class _ReactiveIconState extends State<ReactiveIcon> with SingleTickerProviderSt
   // Send a notification to whomever is interesting
   // in knowning the current status of this icon
   //
-  void _sendNotification(){
-    widget.bloc
-          .inIconSelection
-          .add(ReactiveIconSelectionMessage(
-            icon: widget.icon,
-            isSelected: _isHovered,
-          ));
+  void _sendNotification() {
+    widget.bloc.inIconSelection.add(ReactiveIconSelectionMessage(
+      icon: widget.icon,
+      isSelected: _isHovered,
+    ));
   }
 }

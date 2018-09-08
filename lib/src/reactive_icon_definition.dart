@@ -6,5 +6,4 @@ class ReactiveIconDefinition {
     this.assetIcon,
     this.code: '',
   });
-
 }

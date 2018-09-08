@@ -19,7 +19,7 @@ A full explanation on how to build such Widget may be found on my blog:
 You should ensure that you add the following dependency in your Flutter project.
 ```yaml
 dependencies:
- flutter_reactive_button: "^0.1.0"
+ flutter_reactive_button: "^1.0.0"
 ```
 
 You should then run `flutter packages upgrade` or update your packages in IntelliJ.
