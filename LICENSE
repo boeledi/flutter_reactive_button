@@ -1,6 +1,6 @@
-RangeSlider
+ReactiveButton
 
-An extension of the Flutter Material Slider Widget.
+A Widget that mimics the Facebook Reaction Button in Flutter
 
 Written by Didier Boelens (https://www.didierboelens.com).
 

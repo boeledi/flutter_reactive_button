@@ -1,8 +1,8 @@
-# RangeSlider
+# ReactiveButton
 
-An extension of the Flutter Material Slider to allow selection of a range of values via 2 thumbs.
+A Widget that mimics the Facebook Reaction Button in Flutter.
 
-<img src="https://www.didierboelens.com/images/range_slider.gif" width="220" alt="Flutter RangeSlider" />
+<img src="https://www.didierboelens.com/images/reactive_button.gif" width="220" alt="Flutter ReacticeButton" />
 <br/><br/>
 
 ---
@@ -10,8 +10,8 @@ An extension of the Flutter Material Slider to allow selection of a range of val
 
 A full explanation on how to build such Widget may be found on my blog:
 
-* in English, click [here](https://www.didierboelens.com/2018/07/range-slider/)
-* in French, click [here](https://www.didierboelens.com/fr/2018/07/range-slider/)
+* in English, click [here](https://www.didierboelens.com/2018/09/reactive-button/)
+* in French, click [here](https://www.didierboelens.com/fr/2018/09/reactive-button/)
 
 ---
 ## Getting Started
@@ -19,14 +19,14 @@ A full explanation on how to build such Widget may be found on my blog:
 You should ensure that you add the following dependency in your Flutter project.
 ```yaml
 dependencies:
- flutter_range_slider: "^0.0.4"
+ flutter_reactive_button: "^0.1.0"
 ```
 
 You should then run `flutter packages upgrade` or update your packages in IntelliJ.
 
 In your Dart code, to use it:
 ```dart
-import 'package:flutter_range_slider/flutter_range_slider.dart';
+import 'package:flutter_reactive_button/flutter_reactive_button.dart';
 ```
 
 ---
