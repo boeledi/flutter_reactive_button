@@ -30,6 +30,11 @@ import 'package:flutter_reactive_button/flutter_reactive_button.dart';
 ```
 
 ---
+## Icons
+
+Icons should be defined as assets and passed to the ReactiveButton Widget, via the **icons** property, which accepts a **List < ReactiveIconDefinition >**.
+
+---
 ## Example
 
 An example can be found in the `example` folder.  Check it out.

@@ -40,6 +40,15 @@ final BoxDecoration _kDefaultDecoration = BoxDecoration(
   color: Colors.white12,
 );
 
+/// A Widget that mimics the Facebook Reaction Button in Flutter.
+/// 
+/// A ReactiveButton expects a minimum of 4 parameters [icons], [onSelected], [onTap], [child].
+///
+/// The [icons] contains the list of all the icon assets which will be displayed, together with a code associate to them.
+/// The [onSelected] is called when the user releases the pointer over an icon.
+/// The [onTap] is called when the user has simply tapped the [ReactiveButton]
+/// The [child] defines the button itself as a Widget
+/// 
 class ReactiveButton extends StatefulWidget {
   ReactiveButton({
     Key key,
@@ -57,40 +66,40 @@ class ReactiveButton extends StatefulWidget {
     this.containerAbove: true,
   }) : super(key: key);
 
-  /// List of image assets to be used
+  /// List of image assets, associated to a code, to be used (mandatory)
   final List<ReactiveIconDefinition> icons;
 
-  /// Callback to be used when the user makes a selection
+  /// Callback to be used when the user makes a selection (mandatory)
   final ReactiveButtonCallback onSelected;
 
-  /// Callback to be used when the user proceeds with a simple tap
+  /// Callback to be used when the user proceeds with a simple tap (mandatory)
   final VoidCallback onTap;
 
-  /// Child
+  /// Child (mandatory)
   final Widget child;
 
-  /// Width of each individual icons
+  /// Width of each individual icons (default: 32.0)
   final double iconWidth;
 
-  /// Shape of the icons.  Are they round?
+  /// Shape of the icons.  Are they round? (default: true)
   final bool roundIcons;
 
-  /// Padding between icons
+  /// Padding between icons (default: 8.0)
   final double iconPadding;
 
-  /// Icon grow ratio when hovered
+  /// Icon grow ratio when hovered (default: 1.2)
   final double iconGrowRatio;
 
-  /// Decoration of the container
+  /// Decoration of the container.  If none provided, the default one will be used
   final Decoration decoration;
 
-  /// Padding of the container
+  /// Padding of the container (default: EdgeInsets.all(4.0))
   final EdgeInsets padding;
 
-  /// Distance between the button and the container
+  /// Distance between the button and the container (default: 4.0)
   final double containerPadding;
 
-  /// Do we prefer showing the container above the button (if there is room)?
+  /// Do we prefer showing the container above the button (if there is room)? (default: true)
   final bool containerAbove;
 
   @override
