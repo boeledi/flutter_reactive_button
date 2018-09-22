@@ -34,6 +34,8 @@ import 'package:flutter_reactive_button/flutter_reactive_button.dart';
 
 Icons should be defined as assets and passed to the ReactiveButton Widget, via the **icons** property, which accepts a **List < ReactiveIconDefinition >**.
 
+For your convenience, you will find the images that are used in the sample, in the file '*images.zip*', please read the '*README.md*', included in the ZIP file, for further instructions on how to use these images in your project.
+
 ---
 ## Example
 
